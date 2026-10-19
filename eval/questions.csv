@@ -1,0 +1,23 @@
+id,type,question,expected_chunks,must_contain,expect_no_answer,note
+q01,1 Everyday,How often will my boss check how I'm doing?,003,annual,no,'boss' / 'check how I'm doing' = supervisor / performance review
+q02,1 Everyday,"I saw something shady at work, who do I tell?",010,compliance@contoso.com;1-800-555-1212,no,'shady' is not in the handbook
+q03,1 Everyday,Is the company going to sell my info?,007,not sell|won't sell|will not|does not sell|doesn't sell,no,'info' = personal information
+q04,1 Everyday,What if someone at work keeps threatening me?,006,supervisor|human resources,no,'threatening' -> workplace violence reporting
+q05,2 Exact term,What is 1-800-555-1212?,010,compliance hotline,no,phone number
+q06,2 Exact term,compliance@contoso.com,010,compliance officer,no,"email only, no question words"
+q07,2 Exact term,What does PPE mean?,004,personal protective equipment,no,acronym
+q08,2 Exact term,Who uses privacy@contoso.com?,008,privacy officer,no,email
+q09,3 Mixed,Can someone get fired for getting back at me after I use the Whistleblower Policy?,011,termination|fired|disciplinary,no,'getting back at' = retaliation
+q10,3 Mixed,Do I have to do the data security training every year or just once?,013,annual|every year|each year,no,
+q11,3 Mixed,My details are wrong in the system. Should I email privacy@contoso.com?,008,privacy@contoso.com|privacy officer,no,
+q12,3 Mixed,Will anyone know it was me if I call the Compliance Hotline?,010;011,anonym|confidential,no,answer spans 2 chunks
+q13,4 Strict,What is the definition of Workplace Violence?,005,physical aggression;intimidation;harassment,no,must keep the full definition
+q14,4 Strict,What does the written summary of the performance review include?,003,rating;feedback;goals,no,
+q15,4 Strict,List the Company Values.,002,quality;integrity;innovation;teamwork;respect;excellence;accountability;community,no,all 8 values
+q16,4 Strict,What does the Workplace Safety Program include?,004,hazard;training;protective equipment|ppe;emergency;reporting;inspection;record,no,all 7 items
+q17,5 Unanswerable,How many vacation days do I get?,,,yes,no leave policy in the handbook
+q18,5 Unanswerable,What is the salary of a Sales Representative?,,,yes,"trap: the role is listed, the salary is not"
+q19,5 Unanswerable,What is the dress code?,,,yes,
+q20,5 Unanswerable,Which month are performance reviews held?,003,,yes,"trap: right chunk is found, but it only says 'annually'"
+q21,6 Multi-section,Which policies also apply to contractors?,007;009,privacy;whistleblower,no,needs 2 sections
+q22,6 Multi-section,What training does Contoso give employees?,004;006;013,safety;violence;data security,no,needs 3 sections
